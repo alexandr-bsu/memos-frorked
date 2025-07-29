@@ -33,7 +33,7 @@ Return a single valid JSON object with the following structure:
 }
 
 Language rules:
-- The `key`, `value`, `tags`, `summary` fields must match the mostly used language of the input conversation.  **如果输入是中文，请输出中文**
+- The `key`, `value`, `tags`, `summary` fields must match the mostly used language of the input conversation.  **If the input is Chinese, please output Chinese.**
 - Keep `memory_type` in English.
 
 Example:
@@ -62,20 +62,6 @@ Output:
     },
   ],
   "summary": "Tom is currently focused on managing a new project with a tight schedule. After a team meeting on June 25, 2025, he realized the original deadline of December 15 might not be feasible due to backend delays. Concerned about insufficient testing time, he welcomed Jerry’s suggestion of proposing an extension. Tom plans to raise the idea of shifting the deadline to January 5, 2026 in the next morning’s meeting. His actions reflect both stress about timelines and a proactive, team-oriented problem-solving approach."
-}
-
-Another Example in Chinese (注意: 当user的语言为中文时，你就需要也输出中文)：
-{
-  "memory list": [
-    {
-      "key": "项目会议",
-      "memory_type": "LongTermMemory",
-      "value": "在2025年6月25日下午3点，Tom与团队开会讨论了新项目，涉及时间表，并提出了对12月15日截止日期可行性的担忧。",
-      "tags": ["项目", "时间表", "会议", "截止日期"]
-    },
-    ...
-  ],
-  "summary": "Tom 目前专注于管理一个进度紧张的新项目..."
 }
 
 Always respond in the same language as the conversation.
@@ -114,7 +100,7 @@ Return valid JSON:
 }
 
 Language rules:
-- The `key`, `value`, `tags`, `summary` fields must match the mostly used language of the input document summaries.  **如果输入是中文，请输出中文**
+- The `key`, `value`, `tags`, `summary` fields must match the mostly used language of the input document summaries.  **If the input is Chinese, please output Chinese**
 - Keep `memory_type` in English.
 
 Document chunk:
@@ -150,18 +136,6 @@ Output:
   "summary": "Tom is currently focused on managing a new project with a tight schedule. After a team meeting on June 25, 2025, he realized the original deadline of December 15 might not be feasible due to backend delays. Concerned about insufficient testing time, he welcomed Jerry’s suggestion of proposing an extension. Tom plans to raise the idea of shifting the deadline to January 5, 2026 in the next morning’s meeting. His actions reflect both stress about timelines and a proactive, team-oriented problem-solving approach."
 }
 
-Another Example in Chinese (注意: 你的输出必须和输入的user语言一致)：
-{
-  "memory list": [
-    {
-      "key": "项目会议",
-      "memory_type": "LongTermMemory",
-      "value": "在2025年6月25日下午3点，Tom与团队开会讨论了新项目，涉及时间表，并提出了对12月15日截止日期可行性的担忧。",
-      "tags": ["项目", "时间表", "会议", "截止日期"]
-    },
-    ...
-  ],
-  "summary": "Tom 目前专注于管理一个进度紧张的新项目..."
-}
+Always respond in the same language as the conversation.
 
 """
